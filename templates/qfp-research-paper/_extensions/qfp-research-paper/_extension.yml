@@ -1,0 +1,30 @@
+title: "Quantitatives Forschungsprojekt: Formatvorlage für den Forschungsbericht"
+author: Sascha Schworm
+version: 1.0.0
+quarto-required: ">=1.5.0"
+contributes:
+  formats:
+    pdf:
+      lang: de
+      csl: assets/apa.csl
+      include-in-header: partials/header.tex
+      documentclass: scrartcl
+      papersize: a4
+      mainfont: Times New Roman
+      sansfont: Times New Roman
+      fontsize: 12pt
+      linestretch: 1.25
+      date-format: short
+      classoption: 
+        - headings=normal
+        - DIV=12
+      template-partials:
+        - partials/title.tex
+        - partials/before-body.tex
+      fig-width: 5
+      fig-height: 2.5
+      fig-pos: H
+      fig-align: center
+      execute:
+        echo: false
+        warning: false

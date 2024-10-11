@@ -1,0 +1,115 @@
+---
+lang: de
+title: Vorlage für den Forschungsbericht zur systematischen Analyse von Forschungsergebnissen
+date: "2025-01-01"
+author: 
+  - name: Max Mustermann
+format:
+  qfp-research-paper-pdf: default
+abstract: |
+  Zusammenfassung der wichtigsten Forschungsergebnisse und methodischen Ansätze, die den zentralen Inhalt des Berichts prägnant und verständlich darstellt. Der Abstract umfasst die Forschungsfrage, das gewählte methodische Vorgehen, die wesentlichen Resultate sowie die daraus abgeleiteten Implikationen für Theorie und Praxis.
+---
+
+```{r}
+#| label: setup
+library(gtsummary)
+library(mosaic)
+
+gtsummary::theme_gtsummary_language("de")
+gtsummary::theme_gtsummary_continuous2()
+gtsummary::theme_gtsummary_mean_sd()
+gtsummary::theme_gtsummary_eda()
+gtsummary::theme_gtsummary_compact()
+
+ggplot2::theme_set(theme_light(base_size = 8))
+```
+
+# Einleitung
+
+Einführung in den Forschungsgegenstand und den Kontext des Themas. Hier wird die Relevanz der Thematik für das jeweilige Forschungsfeld beschrieben. Dabei sollte auf aktuelle Entwicklungen oder Problemstellungen hingewiesen werden, die die Grundlage für die Forschung bilden.
+
+## Problemstellung und Zielsetzung
+
+Detaillierte Beschreibung des zentralen Forschungsproblems, das die Arbeit adressiert. Es wird erläutert, welche spezifischen Wissenslücken oder praktischen Herausforderungen bestehen und welche Ziele mit der Untersuchung verfolgt werden. Dabei sollte auch auf die theoretische Relevanz des Problems eingegangen werden.
+
+## Beitrag für Wissenschaft und Praxis
+
+Diskussion des Beitrags der Forschung sowohl für das wissenschaftliche Verständnis des Themas als auch für die praktische Anwendung. Hier werden die potenziellen Auswirkungen der Forschungsergebnisse auf das jeweilige Fachgebiet und konkrete Handlungsempfehlungen für die Praxis formuliert.
+
+## Gang der Arbeit
+
+Darstellung der Struktur und des Aufbaus des Berichts, um dem Leser eine Orientierung zu bieten. Hier wird erläutert, wie die Arbeit in verschiedene Kapitel unterteilt ist und welcher methodische Weg gewählt wurde, um die Forschungsfragen zu beantworten.
+
+# Theoretischer Hintergrund und Forschungsstand
+
+Zusammenfassung der bestehenden Literatur und Theorien, die das Thema betreffen. Hier wird ein Überblick über den aktuellen Forschungsstand gegeben und relevante theoretische Ansätze und Modelle vorgestellt. Dabei sollten auch bisherige Studien und deren Ergebnisse kurz referiert werden.
+
+## Konstrukt 1 (z. B. die UV)
+
+Detaillierte Erklärung des ersten zentralen Konstrukts der Untersuchung, beispielsweise einer unabhängigen Variable. Hier wird erläutert, was unter diesem Konstrukt verstanden wird, wie es in der Literatur definiert ist und warum es für die vorliegende Forschung relevant ist.
+
+## Konstrukt 2 (z. B. der Moderator)
+
+Beschreibung eines moderierenden Konstrukts, das die Beziehung zwischen den unabhängigen und abhängigen Variablen beeinflussen könnte. Es wird beschrieben, wie dieses Konstrukt in der Forschungsliteratur verwendet wird und welche Bedeutung es für die Hypothesenentwicklung hat.
+
+## Konstrukt 3 (z. B. die AV)
+
+Erläuterung des dritten zentralen Konstrukts, das in der Untersuchung analysiert wird, z. B. die abhängige Variable. Hier wird dargestellt, wie dieses Konstrukt gemessen wird und welche theoretischen Überlegungen ihm zugrunde liegen.
+
+## Hypothesenentwicklung
+
+Ausformulierung der zu prüfenden Hypothesen auf Basis der theoretischen Überlegungen und des Forschungsstands. Hier wird beschrieben, welche Beziehungen zwischen den untersuchten Konstrukten erwartet werden und warum.
+
+# Methode
+
+Ausführliche Darstellung des methodischen Vorgehens, das in der Studie verwendet wird. Hier wird der Forschungsprozess von der Stichprobenauswahl über das Untersuchungsdesign bis hin zur Durchführung der Untersuchung beschrieben.
+
+## Stichprobe
+
+Beschreibung der verwendeten Stichprobe, inklusive Informationen zur Größe, Zusammensetzung und den Auswahlkriterien. Wichtige Merkmale der Stichprobe wie Alter, Geschlecht, Bildungsstand oder andere relevante Variablen werden hier aufgeführt.
+
+## Untersuchungsdesign
+
+Erläuterung des Untersuchungsdesigns, das verwendet wurde, um die Hypothesen zu testen. Dies könnte z. B. ein Experiment, eine Querschnittstudie oder ein Längsschnittdesign sein. Es wird beschrieben, wie die Variablen erhoben und gemessen wurden.
+
+## Untersuchungsdurchführung
+
+Beschreibung des Ablaufs der Datenerhebung. Hier wird der genaue Prozess erklärt, wann und wie die Daten gesammelt wurden, unter welchen Bedingungen die Untersuchung stattfand und welche Maßnahmen ergriffen wurden, um eine valide Datenerhebung sicherzustellen.
+
+## Datenaufbereitung und statistische Verfahren
+
+Darstellung der Verfahren zur Aufbereitung der Daten (z. B. Umgang mit fehlenden Werten, Transformation von Variablen) und der statistischen Methoden, die für die Datenanalyse verwendet wurden (z. B. Regressionsanalysen, t-Tests, ANOVA).
+
+# Ergebnisse
+
+Präsentation der empirischen Ergebnisse der Studie. Hier werden die Resultate in klarer und präziser Form dargestellt, begleitet von Tabellen, Grafiken und Statistiken, die die gewonnenen Erkenntnisse veranschaulichen.
+
+## Deskriptivstatistische Datenanalyse
+
+Ergebnisse der deskriptiven Statistik, die grundlegende Informationen über die untersuchte Stichprobe liefern, wie z. B. Mittelwerte, Standardabweichungen oder Häufigkeiten der zentralen Variablen.
+
+## Inferenzstatistische Prüfung der Hypothesen
+
+Ergebnisse der inferenzstatistischen Analysen, in denen die Hypothesen getestet werden. Hier wird berichtet, ob die Hypothesen bestätigt oder verworfen werden und welche statistische Signifikanz die Ergebnisse aufweisen.
+
+## Weitere explorative Analysen
+
+Zusätzliche explorative Analysen, die über die ursprünglichen Hypothesen hinausgehen. Hier könnten interessante Muster oder unerwartete Ergebnisse diskutiert werden, die sich aus der Analyse der Daten ergeben haben.
+
+# Diskussion
+
+Interpretation der Ergebnisse im Kontext der Forschungsfragen und der theoretischen Grundlagen. Hier werden die wichtigsten Ergebnisse der Studie zusammengefasst und kritisch diskutiert. Es wird auf mögliche Ursachen für die gefundenen Resultate eingegangen und die Bedeutung der Ergebnisse für das Forschungsfeld beleuchtet.
+
+## Zusammenfassung und Interpretation der Ergebnisse
+
+Zusammenfassung der zentralen Ergebnisse der Studie und Interpretation im Hinblick auf die Forschungsfrage. Hier wird auch auf die Übereinstimmung oder Abweichung von bisherigen Forschungsergebnissen eingegangen.
+
+## Praktische Implikationen
+
+Konkrete Empfehlungen für die Praxis, die sich aus den Forschungsergebnissen ableiten lassen. Diese könnten sich auf spezifische Maßnahmen oder Strategien beziehen, die in der Praxis umgesetzt werden sollten.
+
+## Limitationen und zukünftige Forschung
+
+Erläuterung der Limitationen der Studie, z. B. methodische Schwächen, Stichprobenbeschränkungen oder Einschränkungen der Generalisierbarkeit. Es werden auch Vorschläge für zukünftige Forschungen gemacht, die auf den Erkenntnissen der aktuellen Studie aufbauen könnten.
+
+# Literaturverzeichnis

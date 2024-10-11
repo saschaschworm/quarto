@@ -1,0 +1,15 @@
+$if(has-frontmatter)$
+  \frontmatter
+$endif$
+
+$if(title)$
+  \maketitle
+  \vspace*{-4em}
+  $if(abstract)$
+    \begin{abstract}
+      $abstract$
+    \end{abstract}
+  $endif$
+$endif$
+
+\vspace{2em}
