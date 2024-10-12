@@ -1,17 +1,21 @@
 ---
 lang: de
+
 title: Vorlage für den Forschungsbericht zur systematischen Analyse von Forschungsergebnissen
-date: "2025-01-01"
+
 author: 
   - name: Max Mustermann
-format:
-  qfp-research-paper-pdf: default
+
 abstract: |
   Zusammenfassung der wichtigsten Forschungsergebnisse und methodischen Ansätze, die den zentralen Inhalt des Berichts prägnant und verständlich darstellt. Der Abstract umfasst die Forschungsfrage, das gewählte methodische Vorgehen, die wesentlichen Resultate sowie die daraus abgeleiteten Implikationen für Theorie und Praxis.
+
+format:
+  qfp-research-paper-pdf: default
 ---
 
 ```{r}
 #| label: setup
+library(gt)
 library(gtsummary)
 library(mosaic)
 
