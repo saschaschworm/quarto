@@ -1,0 +1,109 @@
+---
+lang: de
+
+title: Vorlage für den Forschungsbericht zur systematischen Analyse von Forschungsergebnissen
+
+author: 
+  - name: Max Mustermann
+
+abstract: |
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+  
+documentclass: scrartcl
+number-sections: false
+toc: false
+lof: false
+lot: false
+number-depth: 1
+toc-depth: 1
+
+format:
+  qfp-research-paper-pdf: default
+
+bibliography: references.bib
+---
+
+```{r}
+#| label: setup
+library(gt)
+library(gtsummary)
+library(mosaic)
+
+gtsummary::theme_gtsummary_language("de")
+gtsummary::theme_gtsummary_continuous2()
+gtsummary::theme_gtsummary_mean_sd()
+gtsummary::theme_gtsummary_eda()
+gtsummary::theme_gtsummary_compact()
+
+ggplot2::theme_set(theme_light(base_size = 8))
+```
+
+# Zitationen und Querverweise
+
+# Abbildungen
+
+## Abbildungen von einer Internetquelle
+
+Zum Einfügen einer Abbildung von einer Internetquelle bitte den folgenden Link verwenden: <https://leitbegriffe.bzga.de/fileadmin/_processed_/8/6/csm_erklaerungs-_und_veraenderungsmodell_1_abb2_a084987dff.png>
+
+## Abbildungen von der Festplate
+
+Zum Einfügen einer Abbildung von der Festplatte, bitte die Grafik mit dem Namen `technology-acceptance-model.png` aus dem Unterordner `figures` verwenden.
+
+## Abbildungen mit R
+
+```{r}
+#| label: fig-identifikator
+#| fig-cap: Bildunterschrift
+#| fig-pos: H
+#| fig-width: 5
+#| fig-height: 2.5
+#| fig-align: center
+
+
+```
+
+# Tabellen
+
+## Einfache Tabellen mit Markdown
+
+## Tabellen mit R
+
+```{r}
+#| label: tbl-identifikator-i
+#| tbl-pos: H
+#| tbl-cap: Tabellenüberschrift
+
+
+```
+
+```{r}
+#| label: tbl-identifikator-ii
+#| tbl-pos: H
+#| tbl-cap: Tabellenüberschrift
+
+
+```
+
+```{r}
+#| label: tbl-identifikator-iii
+#| tbl-pos: H
+#| tbl-cap: Tabellenüberschrift
+
+
+```
+
+Da mit `gtsummary` die Gestaltung einer vielzahl unterschiedlicher Tabellen möglich und dabei hochgradig konfigurierbar ist, lohnt sich immer ein Blick in die [Dokumentation](https://www.danieldsjoberg.com/gtsummary/index.html) bzw. in den [Spickzettel](https://raw.githubusercontent.com/rstudio/cheatsheets/main/gtsummary.pdf). Weitere Spickzettel finden sich auf der [Internetseite von Posit](https://posit.co/resources/cheatsheets/).
+
+# Ausgabe von Variablen im Text
+
+```{r}
+#| label: calculations
+
+mean.age <- mean(~ age, data = trial, na.rm = TRUE)
+favstats.ttdeath <- favstats(ttdeath ~ trt, data = trial, na.rm = TRUE)
+tbl.gtsummary <- trial |>tbl_summary(include = c(age), by = trt) |>
+  add_difference()
+```
+
+# Literaturverzeichnis
