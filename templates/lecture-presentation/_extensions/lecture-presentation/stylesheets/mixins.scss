@@ -1,0 +1,128 @@
+@mixin text-4xs {
+  font-size: $presentation-font-size-root * 0.4;
+  line-height: $presentation-font-size-root * 0.5;
+}
+
+@mixin text-3xs {
+  font-size: $presentation-font-size-root * 0.5;
+  line-height: $presentation-font-size-root * 0.7;
+}
+
+@mixin text-2xs {
+  font-size: $presentation-font-size-root * 0.6;
+  line-height: $presentation-font-size-root * 0.75;
+}
+
+@mixin text-xs {
+  font-size: $presentation-font-size-root * 0.75;
+  line-height: $presentation-font-size-root * 1;
+}
+
+@mixin text-sm {
+  font-size: $presentation-font-size-root * 0.875;
+  line-height: $presentation-font-size-root * 1.25;
+}
+
+@mixin text-base {
+  font-size: $presentation-font-size-root;
+  line-height: $presentation-font-size-root * 1.25;
+}
+
+@mixin text-lg {
+  font-size: $presentation-font-size-root * 1.125;
+  line-height: $presentation-font-size-root * 1.75;
+}
+
+@mixin text-xl {
+  font-size: $presentation-font-size-root * 1.25;
+  line-height: $presentation-font-size-root * 1.75;
+}
+
+@mixin text-2xl {
+  font-size: $presentation-font-size-root * 1.5;
+  line-height: $presentation-font-size-root * 2;
+}
+
+@mixin text-3xl {
+  font-size: $presentation-font-size-root * 1.875;
+  line-height: $presentation-font-size-root * 2.25;
+}
+
+@mixin text-4xl {
+  font-size: $presentation-font-size-root * 2.25;
+  line-height: $presentation-font-size-root * 2.5;
+}
+
+@mixin leading-none {
+  line-height: 1;
+}
+
+@mixin leading-tight {
+  line-height: 1.25;
+}
+
+@mixin font-thin {
+  font-weight: 100;
+}
+
+@mixin font-extralight {
+  font-weight: 200;
+}
+
+@mixin font-light {
+  font-weight: 300;
+}
+
+@mixin font-normal {
+  font-weight: 400;
+}
+
+@mixin font-medium {
+  font-weight: 500;
+}
+
+@mixin font-semibold {
+  font-weight: 600;
+}
+
+@mixin font-bold {
+  font-weight: 700;
+}
+
+@mixin font-extrabold {
+  font-weight: 800;
+}
+
+@mixin font-black {
+  font-weight: 900;
+}
+
+@mixin space-y($multiplicator) {
+  & > * + * {
+    margin-top: $multiple * $multiplicator;
+  }
+}
+
+@mixin tracking-tighter {
+  letter-spacing: -0.05em;
+}
+
+@mixin tracking-tight {
+  letter-spacing: -0.025em;
+}
+
+@mixin tracking-normal {
+  letter-spacing: 0em;
+}
+
+@mixin tracking-wide {
+  letter-spacing: 0.025em;
+}
+
+@mixin tracking-wider {
+  letter-spacing: 0.05em;
+}
+
+@mixin tracking-widest {
+  letter-spacing: 0.1em;
+}

@@ -1,0 +1,67 @@
+title: Lecture-presentation
+author: Sascha Schworm
+version: 1.0.0
+quarto-required: ">=1.6.0"
+contributes:
+  formats:
+    revealjs:
+      # ---- FORMAT OPTIONS --------------------------------------------------------------------------------------------
+      theme: [stylesheets/main.scss]
+      html-q-tags: true
+      date-format: short
+
+      # ---- TABLE OF CONTENTS -----------------------------------------------------------------------------------------
+      toc: true
+      toc-depth: 1
+      toc-title: Modulübersicht
+
+      # ---- NUMBERING -------------------------------------------------------------------------------------------------
+      number-sections: true
+      number-depth: 3
+
+      # ---- SLIDES ----------------------------------------------------------------------------------------------------
+      slide-level: 4
+      slide-number: c
+      show-slide-number: all
+
+      # ---- SLIDE TOOLS -----------------------------------------------------------------------------------------------
+      menu:
+        titleSelector: "h1:not(.title), h2, h3"
+        useTextContentForMissingTitles: false
+        hideMissingTitles: true
+      chalkboard:
+        theme: whiteboard
+
+      # ---- NAVIGATION ------------------------------------------------------------------------------------------------
+      hide-interactive-cursor: true
+      hide-cursor-time: 1000
+
+      # ---- SLIDE LAYOUT ----------------------------------------------------------------------------------------------
+      auto-stretch: false
+      width: 1280
+      height: 720
+
+      # ---- CODE ------------------------------------------------------------------------------------------------------
+      code-annotations: select
+
+      # ---- FIGURES ---------------------------------------------------------------------------------------------------
+      fig-format: svg
+
+      # ---- RENDERING -------------------------------------------------------------------------------------------------
+      knitr:
+        opts_chunk:
+          dev: svg
+          dev.args: { bg: "transparent" }
+      template-partials:
+        - partials/title-slide.html
+        - partials/toc-slide.html
+      filters:
+        - quarto
+      shortcodes:
+        - iconify
+        - qrcode
+      revealjs-plugins:
+        - plugins/toolkit
+
+      # ---- TEXT OUTPUT -----------------------------------------------------------------------------------------------
+      strip-comments: true

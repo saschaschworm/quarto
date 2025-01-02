@@ -1,0 +1,683 @@
+/*-- scss:imports --*/
+@import "mixins.scss";
+@import "colors.scss";
+@import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700");
+
+/*-- scss:defaults --*/
+
+$font-size-root: 32px;
+$font-family-sans-serif: Asap, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-monospace: "Spline Sans Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+  "Courier New", monospace;
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+$multiple: $font-size-root / 4;
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+$presentation-font-size-root: $font-size-root;
+$presentation-line-height: 1;
+$presentation-heading-line-height: 1;
+$presentation-block-margin: 0;
+$presentation-title-slide-text-align: left;
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+$body-bg: $bg-primary;
+$selection-bg: purple;
+$body-color: green;
+$heading-color: red;
+$link-color: hsl(212deg 61% 37% / 1);
+$link-color-hover: lighten($link-color, 20%);
+$text-muted: blue;
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+$border-radius: $multiple;
+$code-block-border-color: $border-secondary;
+$code-block-font-size: $presentation-font-size-root;
+
+/*-- scss:rules --*/
+
+div.reveal div.slides section#title {
+  h1.title {
+    @include text-3xl;
+    @include font-semibold;
+    @include leading-none;
+    color: $text-brand-primary;
+    margin: 0 0 0 0;
+    max-width: 80%;
+  }
+
+  p.subtitle {
+    @include text-2xl;
+    @include font-semibold;
+    @include leading-none;
+    color: $text-secondary;
+    margin: 0 0 0 0;
+    max-width: 80%;
+  }
+
+  p.date {
+    @include text-2xs;
+    @include font-normal;
+    @include leading-none;
+    color: $text-quinary;
+    margin: ($multiple * 6) 0 0 0;
+  }
+
+  div.quarto-title-authors {
+    display: grid;
+    gap: ($multiple * 4);
+    grid-template-columns: repeat(2, auto);
+    margin: ($multiple * 6) 0 0 0;
+
+    div.quarto-title-author {
+      padding: 0 0 0 0;
+
+      div.quarto-title-author-name {
+        @include text-sm;
+        @include font-semibold;
+        @include leading-tight;
+        align-items: center;
+        color: $text-tertiary;
+        column-gap: ($multiple * 1);
+        display: flex;
+        margin: 0 0 0 0;
+
+        a.quarto-title-author-orcid {
+          align-items: center;
+          display: flex;
+
+          img {
+            height: ($multiple * 3);
+            margin: 0 0 0 0;
+            width: ($multiple * 3);
+          }
+        }
+      }
+
+      p.quarto-title-affiliation {
+        @include text-sm;
+        @include leading-none;
+        color: $text-quaternary;
+        margin: 0 0 0 0;
+      }
+
+      div.quarto-title-author-email {
+        @include text-2xs;
+        @include leading-none;
+        color: $link-color;
+        margin: ($multiple * 1) 0 0 0;
+
+        a:hover {
+          color: lighten($link-color, 20%);
+        }
+      }
+    }
+  }
+}
+
+div.reveal div.slides section.title-slide {
+  h1,
+  h2,
+  h3 {
+    @include text-3xl;
+    @include font-semibold;
+    @include leading-none;
+    color: $text-brand-primary;
+    max-width: 85%;
+  }
+
+  & > div.headings {
+    margin-top: (-$presentation-font-size-root * 1.75);
+
+    &:has(span.heading + span.subheading) {
+      margin-top: (-$presentation-font-size-root * 1.75 * 2) + ($multiple * 2);
+    }
+
+    & > span.heading,
+    & > span.subheading {
+      @include text-lg;
+      @include font-semibold;
+      color: $text-quaternary;
+      display: block;
+      overflow: hidden;
+    }
+
+    & > span.subheading {
+      margin-top: ($multiple * -2);
+    }
+  }
+}
+
+div.reveal div.slides section.slide#toc {
+  ul {
+    display: grid;
+    gap: ($multiple * 4);
+    grid-template-columns: repeat(2, 1fr);
+    list-style-type: none;
+    margin: 0 0 0 0;
+
+    li {
+      @include text-base;
+      margin: 0 0 0 0;
+
+      a {
+        align-items: baseline;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: ($multiple * 2);
+
+        span.header-section-number {
+          @include leading-none;
+          align-items: center;
+          aspect-ratio: 1 / 1;
+          background-color: $bg-brand-solid;
+          color: $text-white;
+          display: inline-flex;
+          justify-content: center;
+          min-width: ($multiple * 5);
+        }
+      }
+    }
+  }
+}
+
+div.reveal div.slides section.slide.quiz {
+  ol {
+    border-spacing: ($multiple * 4) ($multiple * 4);
+    counter-reset: list;
+    display: table;
+    list-style-type: none;
+    margin: 0 0 0 0 !important;
+
+    li {
+      @include text-base;
+      color: $text-primary;
+      counter-increment: list;
+      display: table-row;
+      margin: 0 0 0 0;
+
+      &::before {
+        @include font-semibold;
+        background-color: $bg-brand-solid;
+        color: $text-white;
+        content: counter(list, upper-alpha);
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+        width: 2.5ch;
+      }
+
+      p {
+        @include text-base;
+        color: $text-primary;
+      }
+    }
+  }
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+div.reveal div.slides section.slide h4 {
+  @include text-xl;
+  @include font-semibold;
+  @include leading-none;
+  color: $text-brand-primary;
+}
+
+div.reveal div.slides section.slide h5 {
+  @include text-base;
+  @include font-semibold;
+  @include leading-none;
+  color: $text-brand-secondary;
+
+  &:is(* + h5) {
+    margin-top: $multiple * 8 !important;
+  }
+
+  &.warning {
+    color: $text-warning-primary;
+  }
+
+  &.error {
+    color: $text-error-primary;
+  }
+
+  &.success {
+    color: $text-success-primary;
+  }
+}
+
+div.reveal div.slides section.slide p {
+  @include text-base;
+  color: $text-primary;
+
+  &:has(> img) {
+    line-height: 0;
+  }
+}
+
+div.reveal div.slides section.slide sup {
+  @include leading-none;
+}
+
+div.reveal div.slides section.slide a {
+  font-weight: inherit;
+
+  &.external::after {
+    content: "";
+    background-color: currentColor;
+    display: inline-block;
+    height: 1em;
+    margin-left: 0.25em;
+    mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/><path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/></svg>');
+    mask-position: center center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    vertical-align: -0.1em;
+    width: 1em;
+    -webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/><path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/></svg>');
+    -webkit-mask-position: center center;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+  }
+}
+
+div.reveal div.slides section.slide aside {
+  position: static;
+}
+
+div.reveal div.slides section.slide strong {
+  @include font-semibold;
+
+  em {
+    color: $text-brand-primary;
+    font-style: normal;
+  }
+}
+
+div.reveal div.slides section.slide table {
+  width: 100%;
+  margin: 0 auto;
+
+  &.table-bordered {
+    th,
+    td {
+      border: 1px solid $border-secondary;
+    }
+  }
+
+  &.table-sm,
+  &.table-condensed {
+    th,
+    td {
+      @include text-2xs;
+    }
+  }
+
+  caption {
+    @include text-4xs;
+    color: $text-quaternary;
+    margin: 0 auto ($multiple * 2) auto;
+    max-width: 75%;
+    padding: 0 0 0 0;
+    text-align: center;
+  }
+
+  tr.even {
+    background-color: $bg-secondary;
+  }
+
+  th,
+  td {
+    @include text-base;
+    border-bottom-color: $border-secondary;
+    color: $text-primary;
+    padding: ($multiple) ($multiple * 2);
+  }
+
+  th {
+    @include text-2xs;
+    @include leading-none;
+    @include font-semibold;
+    color: $text-tertiary;
+    text-transform: uppercase;
+  }
+}
+
+div.reveal div.slides section.slide img {
+  margin: 0 0 0 0;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+div.reveal div.slides section.slide:not(#toc, .quiz) ul,
+div.reveal div.slides section.slide:not(#toc, .quiz) ol:not(.aside-footnotes) {
+  border-spacing: 0 ($multiple * 4);
+  counter-reset: list;
+  display: table;
+  list-style-type: none;
+  margin: 0 0 0 ($multiple * 4);
+
+  &:first-child:last-child {
+    margin: 0 0 0 0;
+  }
+
+  & > li {
+    @include text-base;
+    color: $text-primary;
+    counter-increment: list;
+    display: table-row;
+    margin: 0 0 0 0;
+
+    &.fragment.visible {
+      opacity: 0.75;
+      visibility: inherit;
+
+      &:has(li.current-fragment) {
+        opacity: 1;
+      }
+    }
+
+    &.fragment.visible.current-fragment {
+      opacity: 1;
+      visibility: inherit;
+    }
+
+    &::before {
+      color: $text-brand-primary;
+      display: table-cell;
+      width: 2.5ch;
+    }
+
+    &:is(ul > li)::before {
+      content: "▶";
+    }
+
+    &:is(ol[type="1"] > li)::before {
+      content: counter(list) ".";
+    }
+
+    &:is(ol[type="a"] > li)::before {
+      content: counter(list, lower-alpha) ")";
+    }
+
+    p {
+      @include text-base;
+      color: $text-primary;
+    }
+
+    & > ul,
+    & > ol:not(.aside-footnotes) {
+      border-spacing: 0 ($multiple * 2);
+      counter-reset: sublist;
+      margin: 0 0 0 ($multiple * 2);
+
+      & > li {
+        @include text-sm;
+        @include leading-tight;
+        color: $text-primary;
+        counter-increment: sublist;
+
+        &:is(ol[type="a"] > li)::before {
+          content: counter(sublist, lower-roman) ")";
+        }
+
+        p {
+          @include text-sm;
+          @include leading-tight;
+          color: $text-primary;
+        }
+      }
+    }
+  }
+}
+
+div.reveal div.slides section.slide iframe {
+  margin: 0 0 0 0;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+div.reveal div.footer {
+  @include text-4xs;
+  @include font-medium;
+  @include tracking-widest;
+  color: $text-quinary;
+  text-transform: uppercase;
+}
+
+div.reveal img.slide-logo {
+  margin: ($multiple * 1.5);
+  right: 0;
+}
+
+div.reveal div.progress {
+  color: $text-brand-primary;
+}
+
+div.reveal div.jump-to-slide {
+  color: $text-primary;
+}
+
+div.reveal div.slides section.slide div.container {
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  justify-content: center;
+
+  > div.content {
+    @include space-y(4);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+  }
+}
+
+div.reveal div.slides section.slide ol.aside-footnotes {
+  max-width: 80%;
+
+  li {
+    @include text-3xs;
+    @include leading-tight;
+    color: $text-quaternary;
+    margin: 0 0 0 0;
+
+    & + li {
+      margin-top: $multiple;
+    }
+
+    p {
+      @include text-3xs;
+      @include leading-tight;
+      color: $text-quaternary;
+    }
+  }
+}
+
+div.reveal div.slides section.slide div.columns {
+  column-gap: ($multiple * 4);
+  display: flex;
+
+  div.column {
+    @include space-y(4);
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 0;
+    margin-right: 0;
+
+    &.centered {
+      justify-content: center;
+    }
+
+    &:first-child > :not(ul, ol),
+    &:last-child > :not(ul, ol) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+
+div.reveal div.slides section.slide div.MathJax_Display {
+  margin: 0 0 0 0;
+}
+
+div.reveal div.slides section.slide span.math {
+  span.MathJax {
+    color: inherit;
+    font-weight: inherit;
+  }
+}
+
+div.reveal div.slides section.slide div.quarto-figure {
+  margin: 0 0 0 0;
+
+  div[aria-describedby]:has(> img) {
+    line-height: 0;
+  }
+
+  figcaption {
+    @include text-4xs;
+    color: $text-quaternary;
+    margin: 0 0 0 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: ($multiple * 2);
+    max-width: 75%;
+    text-align: center;
+
+    &.quarto-float-caption-top {
+      margin-bottom: ($multiple * 2);
+      margin-top: 0;
+    }
+  }
+}
+
+div.reveal div.slides section.slide div.pagedtable-wrapper {
+  border: 0;
+  margin: 0 0 0 0;
+
+  div.pagedtable-header-type {
+    @include text-3xs;
+    color: $text-quinary;
+  }
+
+  div.table-caption {
+    margin: 0 auto ($multiple * 2) auto;
+    max-width: 75%;
+    padding: 0 0 0 0;
+    text-align: center;
+
+    p {
+      @include text-4xs;
+      color: $text-quaternary;
+    }
+  }
+
+  div.pagedtable {
+    border: 0px;
+    border-radius: $border-radius;
+    padding: 0 0 0 0;
+
+    table {
+      th,
+      td {
+        border: 1px solid $border-secondary;
+      }
+    }
+
+    div.pagedtable-footer {
+      @include text-4xs;
+      @include leading-none;
+      border-width: 0 1px 1px 1px;
+      border-color: $border-secondary;
+      border-style: solid;
+      padding: ($multiple * 1.5) ($multiple * 1.5) ($multiple * 1.25);
+      text-transform: uppercase;
+
+      div.pagedtable-index-separator-right,
+      div.pagedtable-index-separator-left {
+        @include text-4xs;
+        @include leading-none;
+      }
+
+      div.pagedtable-info {
+        @include tracking-wider;
+        color: $text-quinary;
+        text-align: left;
+      }
+    }
+  }
+}
+
+div.reveal div.slides section.slide div.code-with-filename-file {
+  background-color: $bg-secondary;
+  color: $text-tertiary;
+  padding-bottom: ($multiple * 1.5);
+  padding-top: ($multiple * 1.5);
+
+  pre {
+    @include text-2xs;
+    @include leading-none;
+  }
+}
+
+div.reveal div.slides section.slide div.cell {
+  div.sourceCode + div.cell-output {
+    margin-top: ($multiple * 4);
+  }
+
+  div.cell-output-stdout {
+    pre {
+      code {
+        @include text-base;
+        color: $text-primary;
+        white-space: pre;
+      }
+    }
+  }
+}
+
+div.reveal div.slides section.slide div.quarto-layout-panel {
+  margin: 0 0 0 0;
+
+  div.quarto-layout-row {
+    div.quarto-layout-cell {
+      margin: 0 0 0 0;
+
+      p {
+        margin: 0 0 0 0;
+      }
+    }
+  }
+}
+
+div.reveal div.slides section.slide .tippy-box[data-theme~="light-border"] {
+  @include text-base;
+  background-color: $bg-white;
+  color: $text-primary;
+  border-radius: ($multiple * 2);
+  border: 1px solid $border-primary;
+
+  div.tippy-content {
+    padding: ($multiple * 2);
+  }
+}
+
+div.glightbox-container {
+  div.gslide-description .gslide-title {
+    @include text-2xs;
+    color: $text-primary;
+    font-family: Asap, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      "Noto Color Emoji";
+  }
+}

@@ -1,0 +1,360 @@
+---
+lang: de
+title: Lorem ipsum dolor sit amet
+subtitle: Duis sem nulla, convallis sit amet odio nec, tincidunt luctus quam.
+footer: '{{< meta title >}} &bull; Hartman, Lawson, Pennington & Reynolds'
+date: last-modified
+logo: assets/fom.svg
+authors:
+  - name: Prof. Dr. Emily Hartman
+    orcid: 0000-0003-1689-0557
+    email: e.hartman@northbridge.edu
+    affiliation: University of Northbridge
+  - name: Prof. Dr. Michael Lawson
+    email: m.lawson@wittech.edu
+    affiliation: Western Institute of Technology
+  - name: Dr. Sarah Pennington
+    email: s.pennington@eastwell.edu
+    affiliation: Eastwell University
+  - name: Dr. David Reynolds
+    email: d.reynolds@pcu.edu
+    affiliation: Pacific Coast University
+course:
+  moodle: https://www.google.com/search?q=q
+format: 
+  lecture-presentation-revealjs: default
+---
+
+```{r}
+#| label: setup
+library(mosaic)
+library(tidyverse)
+
+ggplot2::theme_set(theme_light(base_size = 16))
+ggplot2::theme_update(plot.background = element_rect(fill = "transparent", color = NA))
+ggplot2::theme_update(plot.margin = margin(t = 0, r = 0, b = 0, l = 0))
+ggplot2::theme_update(legend.background = element_rect(fill = "transparent"))
+ggplot2::theme_update(axis.title.x = element_text(margin = margin(t = 8, r = 0, b = 0, l = 0))) 
+ggplot2::theme_update(axis.title.y = element_text(margin = margin(t = 0, r = 8, b = 0, l = 0)))
+```
+
+
+# Pellentesque pulvinar leo et eros vestibulum ornare
+
+## Mauris non quam sit amet leo pretium gravida sed at nisi
+
+### Sed sit amet tellus at arcu pretium tincidunt nec lacinia neque
+
+#### Paragraphs with Inline Icons, External Links and Footnotes
+
+Cras mattis a tortor ac condimentum. {{< iconify fluent-emoji:exploding-head >}} Curabitur lectus urna, mattis ultricies tincidunt sed, hendrerit vel sapien. Ut posuere vulputate ante, ac semper orci mattis vel.^[Nam sollicitudin non ipsum sit amet convallis. Maecenas hendrerit venenatis consectetur. Donec ut eleifend purus, sit amet tincidunt leo. Etiam dictum, velit nec viverra lacinia, felis mi mollis quam, [in interdum felis justo eget lacus](https://www.google.com/){.external target="_blank" rel="nofollow noopener"}.] 
+
+Vivamus iaculis sodales dignissim. Vestibulum tristique magna non lobortis molestie. Suspendisse quam lectus, [luctus ac tortor vitae](https://www.google.com/){.external target="_blank" rel="nofollow noopener"}, pretium auctor enim.^[Pellentesque lorem quam, congue sit amet porttitor a, elementum in nisi. Donec nulla mauris, lacinia dignissim varius ultrices, facilisis sed magna. Donec sagittis gravida orci et dignissim. In dignissim nisl dui, quis porta purus fringilla nec.]
+
+Nulla eget elit lorem. Cras in nibh posuere {{< iconify devicon:rstudio >}}, tempor eros vel, ullamcorper urna. Ut dictum nisl est, et lacinia risus interdum quis.
+
+#### Paragraphs with Inline and Display Math
+
+Vestibulum consequat eleifend leo, eget luctus mauris gravida ac, $\hat{y} = 1$. Pellentesque fringilla sem a libero dapibus varius, **$x = 1$**. Nunc tortor massa, posuere vel arcu nec, ultrices bibendum enim. Etiam porttitor varius lacus.
+
+$$
+\operatorname{E}(R_{i}) = R_{F} + \beta _{i} \times \lbrack \operatorname{E}(R_{M}) - R_{F}\rbrack
+$$ {#eq-capital-asset-pricing-model}
+
+Mauris eget nunc mattis ***$\operatorname{E}(R_{i})$***, ullamcorper augue eu, bibendum turpis. Quisque accumsan non felis consequat elementum. Quisque hendrerit, nunc eu fermentum tempor, dolor lorem dignissim nulla, @eq-capital-asset-pricing-model, et cursus orci leo ac risus.
+
+#### Paragraphs with Headings
+
+##### Proin nec enim ipsum
+Morbi elementum vitae massa a finibus. Nullam semper pharetra mauris, nec imperdiet leo tempor ac. Aenean faucibus magna nec sodales accumsan.
+
+Cras at lobortis lectus, vel pretium diam. Nullam non justo sed ante sollicitudin interdum ut vitae sem. Aliquam dapibus consectetur nulla eu pulvinar.
+
+##### Suspendisse id rhoncus justo 
+Ut quis sem tellus. Aenean vel suscipit mi. Phasellus id lorem semper, tincidunt arcu vel, imperdiet ante. Duis pharetra, risus at commodo mattis.
+
+#### Paragraphs in Columns with Colored Headings
+
+:::: {.columns}
+::: {.column width="50%"}
+##### Proin nec enim ipsum {.success}
+Morbi elementum vitae massa a finibus. Nullam semper pharetra mauris, nec imperdiet leo tempor ac. 
+
+##### Ut faucibus elit libero {.warning}
+Aenean faucibus magna nec sodales accumsan. Nunc consectetur condimentum orci eget consectetur.
+:::
+::: {.column width="50%"}
+#####  Suspendisse id rhoncus justo {.error}
+Ut quis sem tellus. Aenean vel suscipit mi. Phasellus id lorem semper, tincidunt arcu vel, imperdiet ante. 
+:::
+::::
+
+#### Basic Markdown Table
+
+| Column 1 | Column 2 | Column 3 |
+|----------|----------|----------|
+| A        | B        | C        |
+| E        | F        | G        |
+| A        | G        | G        |
+
+#### Basic Markdown Table with Caption
+
+| Column 1 | Column 2 | Column 3 |
+|----------|----------|----------|
+| A        | B        | C        |
+| E        | F        | G        |
+| A        | G        | G        |
+
+: In auctor tristique rhoncus. Nam porta orci tempus purus pharetra, dictum fringilla sapien tincidunt. In cursus tincidunt nisi, sit amet tincidunt risus blandit sit amet. Etiam luctus egestas luctus. Aliquam non sem non odio consectetur ullamcorper vel a mi. 
+
+#### Basic Markdown Table with Caption and Label
+
+| Column 1 | Column 2 | Column 3 |
+|----------|----------|----------|
+| A        | B        | C        |
+| E        | F        | G        |
+| A        | G        | G        |
+
+: In auctor tristique rhoncus. Nam porta orci tempus purus pharetra, dictum fringilla sapien tincidunt. In cursus tincidunt nisi, sit amet tincidunt risus blandit sit amet. Etiam luctus egestas luctus. Aliquam non sem non odio consectetur ullamcorper vel a mi. {#tbl-basic-markdown-table}
+
+#### Basic Markdown Table within Paragraphs
+
+Suspendisse sed velit sagittis, blandit risus eu, malesuada ante. Vivamus mollis est ac ex suscipit, eu consequat massa ullamcorper. Vestibulum bibendum iaculis gravida.
+
+| Column 1 | Column 2 | Column 3 |
+|----------|----------|----------|
+| A        | B        | C        |
+| E        | F        | G        |
+| A        | G        | G        |
+
+Aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel sapien quam. Mauris aliquam gravida ex at iaculis. Nulla eu nibh dui.
+
+#### Bordered Markdown Table with Reduced Font Size
+
+| **Proin consectetur**                                                | **Praesent ligula nis**                                                                                           |    
+|----------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| ***Pellentesque***<br/>Nam aliquam massa in placerat pharetra        | Nullam nibh nisi, maximus nec cursus quis, cursus non libero. Mauris dictum velit ut nisl blandit volutpat.       |
+| ***Suspendisse***<br/>In egestas iaculis augue vel maximus           | Integer molestie, nibh lacinia imperdiet posuere, erat odio laoreet justo, id volutpat tellus ligula vitae nulla. |
+| ***Condimentum***<br/>Aenean pulvinar risus quis suscipit euismo     | Nam risus arcu, condimentum sodales commodo sit amet, placerat quis lacus. Nunc feugiat bibendum tellus           |
+| ***Scelerisque***<br/> Etiam scelerisque suscipit felis vel pulvinar | Nibh eget consectetur fermentum, sapien arcu eleifend sem, vitae condimentum est magna ac nisi.                   |
+| ***Ullamcorper***<br/>In suscipit consectetur fringilla              | Cras tincidunt sem in odio rutrum, quis ultrices purus tempus. Sed aliquet velit ac ex dapibus rhoncus.           |
+
+: {.bordered .sm tbl-colwidths="[50,50]"}
+
+#### Markdown Table within Columns
+
+:::: {.columns}
+::: {.column .centered width="50%"}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet dolor et ex pulvinar posuere. 
+
+Fusce viverra lorem ac bibendum lacinia. Vestibulum sit amet ipsum sit amet mi semper consequat. 
+
+Nulla aliquet placerat metus et auctor. Nulla facilisi. Vivamus vitae augue rutrum, tincidunt tortor fermentum.
+:::
+::: {.column .centered width="50%"}
+| **Proin consectetur**                                            | **Praesent ligula nis**                                                                    |    
+|------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
+| ***Pellentesque***<br/>Nam aliquam massa in placerat pharetra    | Nullam nibh nisi, maximus nec cursus quis, cursus non libero. Mauris dictum velit ut nisl. |
+| ***Suspendisse***<br/>In egestas iaculis augue vel maximus       | Integer molestie, nibh lacinia imperdiet posuere, erat odio laoreet justo.                 |
+| ***Condimentum***<br/>Aenean pulvinar risus quis suscipit euismo | Nam risus arcu, condimentum sodales commodo sit amet, placerat quis lacus.                 |
+
+: In auctor tristique rhoncus. Nam porta orci tempus purus pharetra, dictum fringilla sapien tincidunt. In cursus tincidunt nisi. {#tbl-basic-markdown-table-within-columns .bordered .sm tbl-colwidths="[50,50]"}
+:::
+::::
+
+#### Dynamic Data Table
+
+```{r}
+#| label: dynamic-data-table
+rmarkdown::paged_table(mpg, options = list(rows.print = 5))
+```
+
+#### Dynamic Data Table with Caption
+
+```{r}
+#| label: dynamic-data-table-with-caption
+#| tbl-cap: In auctor tristique rhoncus. Nam porta orci tempus purus pharetra, dictum fringilla sapien tincidunt. In cursus tincidunt nisi, sit amet tincidunt risus blandit sit amet. Etiam luctus egestas luctus. Aliquam non sem non odio consectetur ullamcorper vel a mi.
+rmarkdown::paged_table(mpg, options = list(rows.print = 5))
+```
+
+#### Dynamic Data Table with Caption and Label
+
+```{r}
+#| label: tbl-dynamic-data-table-with-caption-and-label
+#| tbl-cap: In auctor tristique rhoncus. Nam porta orci tempus purus pharetra, dictum fringilla sapien tincidunt. In cursus tincidunt nisi, sit amet tincidunt risus blandit sit amet. Etiam luctus egestas luctus. Aliquam non sem non odio consectetur ullamcorper vel a mi.
+rmarkdown::paged_table(mpg, options = list(rows.print = 5))
+```
+
+#### Static Figure
+
+![](machine-learning.png){width="60%" fig-align="center"}
+
+#### Static Figure with Caption
+
+![Duis suscipit velit nisl, ac dapibus lectus lobortis sit amet. Vivamus semper sed leo ac tincidunt. Nullam dolor mauris, tincidunt a dui et, dapibus dapibus ante. Suspendisse sed libero in felis euismod imperdiet. Source: [https://dev.to/1801ayush/introduction-to-machine-learning-3mof](https://dev.to/1801ayush/introduction-to-machine-learning-3mof)](machine-learning.png){width="60%"}
+
+#### Static Figure with Caption and Label
+
+![Duis suscipit velit nisl, ac dapibus lectus lobortis sit amet. Vivamus semper sed leo ac tincidunt. Nullam dolor mauris, tincidunt a dui et, dapibus dapibus ante. Suspendisse sed libero in felis euismod imperdiet. Source: [https://dev.to/1801ayush/introduction-to-machine-learning-3mof](https://dev.to/1801ayush/introduction-to-machine-learning-3mof)](machine-learning.png){#fig-static-figure-with-caption-and-label width="60%"}
+
+#### Static Figure within Columns
+
+:::: {.columns}
+::: {.column .centered width="60%"}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet dolor et ex pulvinar posuere. 
+
+Fusce viverra lorem ac bibendum lacinia. Vestibulum sit amet ipsum sit amet mi semper consequat. 
+
+Nulla aliquet placerat metus et auctor. Nulla facilisi. Vivamus vitae augue rutrum.
+:::
+::: {.column .centered width="40%"}
+![Duis suscipit velit nisl, ac dapibus lectus lobortis sit amet. Vivamus semper sed leo ac tincidunt.](machine-learning.png){#fig-static-figure-within-columns .lightbox}
+:::
+::::
+
+#### Dynamic Figure
+
+```{r}
+#| label: dynamic-figure
+#| fig-align: center
+gf_boxplot(hwy ~ drv, data = mpg)
+```
+
+#### Dynamic Figure with Caption and Label
+
+```{r}
+#| label: fig-dynamic-figure-with-caption-and-label
+#| fig-cap: Duis suscipit velit nisl, ac dapibus lectus lobortis sit amet. Vivamus semper sed leo ac tincidunt. Nullam dolor mauris, tincidunt a dui et, dapibus dapibus ante. Suspendisse sed libero in felis euismod imperdiet.
+gf_boxplot(hwy ~ drv, data = mpg)
+```
+
+#### Dynamic Figure within Columns
+
+:::: {.columns}
+::: {.column .centered width="60%"}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet dolor et ex pulvinar posuere. 
+
+Fusce viverra lorem ac bibendum lacinia. Vestibulum sit amet ipsum sit amet mi semper consequat. 
+
+Nulla aliquet placerat metus et auctor. Nulla facilisi. Vivamus vitae augue rutrum.
+:::
+::: {.column .centered width="40%"}
+```{r}
+#| label: fig-dynamic-figure-within-columns
+#| fig-cap: Duis suscipit velit nisl, ac dapibus lectus lobortis sit amet. Vivamus semper sed leo ac tincidunt.
+gf_boxplot(hwy ~ drv, data = mpg)
+```
+:::
+::::
+
+
+#### Flat Unordered List
+
+*  ***Lorem ipsum dolor sit amet:*** Consectetur adipiscing elit. Mauris mollis ante sit amet leo lacinia semper. In sit amet ultricies dui, sed congue erat.
+*  ***Proin cursus:*** Nisi sit amet commodo finibus, neque erat sollicitudin dui, eu fermentum justo tortor sit amet massa. Integer auctor arcu nec tempor viverra.
+*  ***Morbi at volutpat tortor:*** Maecenas a nisi nec justo vehicula laoreet non non quam. Praesent ac massa gravida, scelerisque elit a, ornare neque.
+
+#### Flat Unordered List with Incrementation
+
+::: {.incremental}
+*  ***Lorem ipsum dolor sit amet:*** Consectetur adipiscing elit. Mauris mollis ante sit amet leo lacinia semper. In sit amet ultricies dui, sed congue erat.
+*  ***Proin cursus:*** Nisi sit amet commodo finibus, neque erat sollicitudin dui, eu fermentum justo tortor sit amet massa. Integer auctor arcu nec tempor viverra.
+*  ***Morbi at volutpat tortor:*** Maecenas a nisi nec justo vehicula laoreet non non quam. Praesent ac massa gravida, scelerisque elit a, ornare neque.
+:::
+
+#### Flat Ordered List
+
+a)  Etiam nunc nunc, scelerisque a lobortis vel, laoreet vitae arcu. Quisque vestibulum justo quis metus pellentesque mattis. Nam viverra lacinia tellus nec ullamcorper.
+a)  Praesent a aliquet ex. Donec sit amet tellus euismod est mollis egestas eu a felis. Nulla nisi lorem, ultricies ac lectus in, tempus consectetur elit.
+a)  Aliquam ut nisi rhoncus, pellentesque libero quis, placerat sem. Mauris accumsan massa risus, id maximus nunc malesuada quis. Cras laoreet justo at dapibus efficitur.
+
+#### Flat Numbered List
+
+1)  Aliquam et turpis ac mi egestas aliquet a a justo. Nunc nulla enim, pellentesque id sapien ac, dignissim maximus turpis.
+1)  Etiam massa nisi, gravida ut finibus nec, feugiat in metus. Etiam bibendum ut risus ut facilisis. Sed porta mauris consequat, accumsan velit non, ultrices orci.
+1)  Sed ac eros sed leo molestie vulputate. Proin lacinia ac erat sed eleifend. Integer feugiat mauris id enim blandit scelerisque.
+
+#### Nested Unordered List
+
+*  Maecenas id tempus ex. In ornare vehicula augue. Donec nec orci at nisl consectetur tempor. Nunc nunc nisi, consequat eu ipsum sed, dictum tempus urna.
+*  Nam maximus turpis vitae justo maximus, eu accumsan sapien feugiat. Suspendisse in massa sed nibh mollis maximus a a sem. 
+   *  Pellentesque malesuada at mi nec molestie. Praesent iaculis, ante quis feugiat fermentum, risus turpis tempus arcu, id suscipit purus mi sit amet augue.
+   *  Suspendisse iaculis eros urna, et sodales magna laoreet at. Donec non molestie magna. Sed vulputate augue lobortis nibh blandit elementum.
+*  Donec sed neque nulla. Donec quis hendrerit dui. Praesent orci purus, iaculis pulvinar finibus eu, finibus eget elit. In hendrerit suscipit scelerisque.
+
+#### Nested Ordered List
+
+a)  Maecenas id tempus ex. In ornare vehicula augue. Donec nec orci at nisl consectetur tempor. Nunc nunc nisi, consequat eu ipsum sed, dictum tempus urna.
+a)  Nam maximus turpis vitae justo maximus, eu accumsan sapien feugiat. Suspendisse in massa sed nibh mollis maximus a a sem. 
+    a)  Pellentesque malesuada at mi nec molestie. Praesent iaculis, ante quis feugiat fermentum, risus turpis tempus arcu, id suscipit purus mi sit amet augue.
+    a)  Suspendisse iaculis eros urna, et sodales magna laoreet at. Donec non molestie magna. Sed vulputate augue lobortis nibh blandit elementum.
+a)  Donec sed neque nulla. Donec quis hendrerit dui. Praesent orci purus, iaculis pulvinar finibus eu, finibus eget elit. In hendrerit suscipit scelerisque.
+
+#### Unordered List with Nested Ordered List
+
+*  Maecenas id tempus ex. In ornare vehicula augue. Donec nec orci at nisl consectetur tempor. Nunc nunc nisi, consequat eu ipsum sed, dictum tempus urna.
+*  Nam maximus turpis vitae justo maximus, eu accumsan sapien feugiat. Suspendisse in massa sed nibh mollis maximus a a sem. 
+   a)  Pellentesque malesuada at mi nec molestie. Praesent iaculis, ante quis feugiat fermentum, risus turpis tempus arcu, id suscipit purus mi sit amet augue.
+   a)  Suspendisse iaculis eros urna, et sodales magna laoreet at. Donec non molestie magna. Sed vulputate augue lobortis nibh blandit elementum.
+*  Donec sed neque nulla. Donec quis hendrerit dui. Praesent orci purus, iaculis pulvinar finibus eu, finibus eget elit. In hendrerit suscipit scelerisque.
+
+#### Ordered List with Nested Unordered List
+
+a)  Maecenas id tempus ex. In ornare vehicula augue. Donec nec orci at nisl consectetur tempor. Nunc nunc nisi, consequat eu ipsum sed, dictum tempus urna.
+a)  Nam maximus turpis vitae justo maximus, eu accumsan sapien feugiat. Suspendisse in massa sed nibh mollis maximus a a sem. 
+    *  Pellentesque malesuada at mi nec molestie. Praesent iaculis, ante quis feugiat fermentum, risus turpis tempus arcu, id suscipit purus mi sit amet augue.
+    *  Suspendisse iaculis eros urna, et sodales magna laoreet at. Donec non molestie magna. Sed vulputate augue lobortis nibh blandit elementum.
+a)  Donec sed neque nulla. Donec quis hendrerit dui. Praesent orci purus, iaculis pulvinar finibus eu, finibus eget elit. In hendrerit suscipit scelerisque.
+
+#### Code with Annotations
+
+```{.r filename="Example1.R"}
+mpg |>
+  arrange(cyl)  # <1>
+```
+1. Take the `mpg` data frame, and then, sort by the `cyl` column.
+
+#### Code with Console Output and Line Highlighting
+
+```{r}
+#| label: code-with-console-output
+#| echo: true
+#| code-line-numbers: "1|2"
+mpg |>
+  arrange(cyl)
+```
+
+#### Console Output without Code
+
+```{r}
+#| label: console-output-without-code
+favstats(hwy ~ manufacturer, data = mpg)
+```
+
+#### Quiz: Posuere Vulputate {.quiz}
+
+Nunc dapibus non augue eget posuere. Aliquam a dui id tellus congue tempor eu non tellus. Nulla ultricies sapien vel volutpat elementum.
+
+a.  Sed dapibus quam ut ullamcorper lacinia.
+a.  Morbi fermentum purus sodales facilisis tristique.
+a.  Liquam non sem non odio consectetur ullamcorper vel a mi.
+
+#### Audience Response System
+
+{{< qrcode https://quarto.org width=256 height=256 >}}
+
+#### Full-Width YouTube Video 
+
+{{< video https://youtu.be/wo9vZccmqwc width="100%" height="85%" >}}
+
+## Ut viverra lacus tincidunt diam fermentum consectetur
+
+# Phasellus iaculis velit non purus sagittis ultrice dictum tellus
+
+## Vestibulum ante ipsum primis in faucibus orci luctus
+
+## Pellentesque habitant morbi tristique senectus vestibulum enim
+
+# Quisque aliquet nunc vitae justo porttitor placerat lobortis
+
+# Pellentesque ac neque a ex eleifend dapibus ut eu nibh

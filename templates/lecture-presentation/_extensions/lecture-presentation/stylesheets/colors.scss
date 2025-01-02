@@ -1,0 +1,49 @@
+$color-white: hsl(0deg 0% 100% / 1);
+$color-black: hsl(0deg 0% 0% / 1);
+
+$color-brand-50: hsl(168deg 88% 97% / 1);
+$color-brand-100: hsl(166deg 100% 89% / 1);
+$color-brand-200: hsl(168deg 98% 78% / 1);
+$color-brand-300: hsl(170deg 90% 64% / 1);
+$color-brand-400: hsl(172deg 78% 50% / 1);
+$color-brand-500: hsl(173deg 95% 40% / 1);
+$color-brand-600: hsl(174deg 99% 30% / 1);
+$color-brand-700: hsl(175deg 91% 26% / 1);
+$color-brand-800: hsl(175deg 82% 22% / 1);
+$color-brand-900: hsl(176deg 71% 19% / 1);
+$color-brand-940: hsl(178deg 100% 10% / 1);
+
+$color-gray-900: hsl(220deg 37% 11% / 1);
+$color-gray-800: hsl(218deg 29% 17% / 1);
+$color-gray-700: hsl(216deg 21% 27% / 1);
+$color-gray-600: hsl(216deg 15% 35% / 1);
+$color-gray-500: hsl(216deg 12% 47% / 1);
+$color-gray-400: hsl(216deg 14% 65% / 1);
+$color-gray-300: hsl(214deg 21% 84% / 1);
+$color-gray-200: hsl(215deg 26% 91% / 1);
+$color-gray-100: hsl(211deg 33% 95% / 1);
+$color-gray-50: hsl(211deg 34% 98% / 1);
+
+$text-primary: $color-gray-900;
+$text-secondary: $color-gray-700;
+$text-tertiary: $color-gray-600;
+$text-quaternary: $color-gray-500;
+$text-quinary: $color-gray-400;
+$text-senary: $color-gray-300;
+$text-white: $color-white;
+$text-brand-primary: $color-brand-600;
+$text-brand-secondary: $color-brand-500;
+$text-warning-primary: hsl(32deg 56% 49% / 1);
+$text-error-primary: hsl(351deg 100% 35% / 1);
+$text-success-primary: hsl(71deg 38% 51% / 1);
+
+$bg-primary: $color-white;
+$bg-secondary: $color-gray-50;
+$bg-tertiary: $color-gray-100;
+$bg-quaternary: $color-gray-200;
+$bg-brand-solid: $color-brand-600;
+$bg-white: $color-white;
+
+$border-primary: $color-gray-300;
+$border-secondary: $color-gray-200;
+$border-tertiary: $color-gray-100;
