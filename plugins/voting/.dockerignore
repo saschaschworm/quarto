@@ -1,0 +1,14 @@
+**/.DS_Store
+**/.next
+**/.turbo
+**/node_modules
+**/.env
+**/.env.example
+**/.dockerignore
+**/.gitignore
+**/Dockerfile
+**/next-env.d.ts
+.github
+.vscode
+docker
+README.md
