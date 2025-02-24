@@ -3,8 +3,6 @@
 import Pusher from "pusher-js";
 import { createContext, type PropsWithChildren, useCallback, useContext, useEffect, useMemo, useRef } from "react";
 
-import { SOKETI } from "@/config/env";
-
 type PusherContextProps = {
   subscribe: {
     <T>(scope: "connection", event: string, callback: (data: T) => void): () => void;
@@ -25,14 +23,14 @@ const PusherContext = createContext<PusherContextProps>({
   disconnect: () => undefined,
 });
 
-export const PusherProvider = ({ children }: PropsWithChildren) => {
+export const PusherProvider = ({ children, host, appKey }: PropsWithChildren<{ host: string; appKey: string }>) => {
   const pusherRef = useRef<Pusher | null>(null);
 
   // Initialize the Pusher client on the client side.
   if (typeof window !== "undefined" && pusherRef.current === null) {
     console.debug("[Realtime] Initializing Pusher client …");
-    pusherRef.current = new Pusher(SOKETI.APP_KEY, {
-      wsHost: SOKETI.ADDRESS,
+    pusherRef.current = new Pusher(appKey, {
+      wsHost: host,
       enabledTransports: ["ws", "wss"],
       disableStats: true,
       cluster: "local",

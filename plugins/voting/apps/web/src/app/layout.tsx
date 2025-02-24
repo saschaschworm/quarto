@@ -6,6 +6,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import { type PropsWithChildren } from "react";
 
+import { SOKETI } from "@/config/env";
 import { PusherProvider } from "@/providers/pusher";
 
 const sans = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
@@ -16,7 +17,9 @@ const RootLayout = async ({ children }: PropsWithChildren) => {
     <html lang={await getLocale()} className={`${sans.variable} ${mono.variable} h-full font-sans antialiased`}>
       <body className="h-full bg-gray-100">
         <NextIntlClientProvider messages={await getMessages()}>
-          <PusherProvider>{children}</PusherProvider>
+          <PusherProvider host={SOKETI.ADDRESS.EXTERNAL} appKey={SOKETI.APP_KEY}>
+            {children}
+          </PusherProvider>
         </NextIntlClientProvider>
       </body>
     </html>
