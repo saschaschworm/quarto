@@ -22,7 +22,7 @@ const config = tseslint.config(
       "prettier/prettier": "error",
     },
   },
-  { ignores: ["node_modules", ".turbo", "_extensions", "example_files"] },
+  { ignores: ["node_modules", ".turbo", "_extensions", "example_files", "src/vendor"] },
 );
 
 export default config;
