@@ -1,0 +1,24 @@
+{
+  "voting": {
+    "buttons": {
+      "vote": "Abstimmen"
+    },
+    "labels": {
+      "votes": "{votes, plural, =0 {# Stimmen} =1 {# Stimme} other {# Stimmen}}"
+    },
+    "states": {
+      "empty": {
+        "title": "Für diese Sitzung existieren aktuell keine offenen Abstimmungen"
+      }
+    }
+  },
+  "realtime": {
+    "notifications": {
+      "connecting": "Verbindung wird aufgebaut",
+      "connected": "Verbindung erfolgreich hergestellt",
+      "unavailable": "Keine Verbindung möglich",
+      "reconnecting": "Verbindung wird wiederhergestellt",
+      "exception": "Fehler bei der Verbindung"
+    }
+  }
+}

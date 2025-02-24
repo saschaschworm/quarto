@@ -1,0 +1,8 @@
+.next/
+.turbo/
+dist/
+example_files/
+node_modules/
+.env
+example.html
+next-env.d.ts

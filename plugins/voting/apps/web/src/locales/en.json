@@ -1,0 +1,24 @@
+{
+  "voting": {
+    "buttons": {
+      "vote": "Vote"
+    },
+    "labels": {
+      "votes": "{votes, plural, =0 {# Votes} =1 {# Vote} other {# Votes}}"
+    },
+    "states": {
+      "empty": {
+        "title": "For this session there are currently no open votings"
+      }
+    }
+  },
+  "realtime": {
+    "notifications": {
+      "connecting": "Connection is being established",
+      "connected": "Connection successfully established",
+      "unavailable": "No connection available",
+      "reconnecting": "Attempting to reconnect",
+      "exception": "Error establishing connection"
+    }
+  }
+}

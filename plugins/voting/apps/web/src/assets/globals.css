@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@plugin '@tailwindcss/forms';
+
+@theme {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  @keyframes dots {
+    93.75%,
+    100% {
+      opacity: 0.2;
+    }
+  }
+}
