@@ -1,0 +1,31 @@
+services:
+  web:
+    image: ghcr.io/saschaschworm/quarto-voting:latest
+    build:
+      context: ../
+      dockerfile: ./apps/web/Dockerfile
+    environment:
+      - NODE_ENV=production
+      - SECRET_KEY=${SECRET_KEY}
+      - ACCESS_TOKEN=${ACCESS_TOKEN}
+      - REDIS_DSN=${REDIS_DSN}
+      - SOKETI_ADDRESS_EXTERNAL=${SOKETI_ADDRESS_EXTERNAL}
+      - SOKETI_ADDRESS_INTERNAL=${SOKETI_ADDRESS_INTERNAL}
+      - SOKETI_APP_KEY=${SOKETI_APP_KEY}
+    depends_on:
+      - realtime
+      - cache
+    ports:
+      - 3000:3000
+  realtime:
+    image: quay.io/soketi/soketi:latest
+    environment:
+      - SOKETI_DEFAULT_APP_ID=${SOKETI_APP_ID}
+      - SOKETI_DEFAULT_APP_KEY=${SOKETI_APP_KEY}
+      - SOKETI_DEFAULT_APP_SECRET=${SOKETI_APP_SECRET}
+    depends_on:
+      - cache
+    ports:
+      - 6001:6001
+  cache:
+    image: redis:7.4.2-alpine
