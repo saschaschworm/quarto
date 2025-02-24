@@ -39,7 +39,7 @@ jobs:
           context: "./plugins/voting"
           file: "./plugins/voting/apps/web/Dockerfile"
           push: true
-          tags: saschaschworm/quarto-voting:latest
+          tags: ghcr.io/saschaschworm/quarto-voting:latest
 
       - name: Generate Artifact Attestation
         uses: actions/attest-build-provenance@v2
